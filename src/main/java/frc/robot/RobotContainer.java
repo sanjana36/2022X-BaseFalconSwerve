@@ -37,6 +37,8 @@ public class RobotContainer {
   private final Swerve s_Swerve = new Swerve();
 
 
+
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     boolean fieldRelative = false;
@@ -62,9 +64,12 @@ public class RobotContainer {
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
    * @return the command to run in autonomous
+   *
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return new exampleAuto(s_Swerve);
+    // return new exampleAuto(s_Swerve);
+    DriveStraight move5Meters = new DriveStraight(s_Swerve, 5.0, 2.0, 0.0);
+    return move5Meters;
   }
 }

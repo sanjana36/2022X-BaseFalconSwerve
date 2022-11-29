@@ -20,11 +20,14 @@ public final class Constants {
         public static final double wheelBase = Units.inchesToMeters(26.125);
         public static final double wheelDiameter = Units.inchesToMeters(4.42);
         public static final double wheelCircumference = wheelDiameter * Math.PI;
+        public static final double ticksPerRevolution = 2048;
+        public static final double driveGearRatio = (8.14 / 1.0); // https://www.swervedrivespecialties.com/products/mk4i-swerve-module
+
+        public static final double distanceToTicks = wheelDiameter * Math.PI/ticksPerRevolution/driveGearRatio;
 
         public static final double openLoopRamp = 0.25;
         public static final double closedLoopRamp = 0.0;
 
-        public static final double driveGearRatio = (8.14 / 1.0); // https://www.swervedrivespecialties.com/products/mk4i-swerve-module
         public static final double angleGearRatio = (150/7/1);
 
         public static final SwerveDriveKinematics swerveKinematics = new SwerveDriveKinematics(
